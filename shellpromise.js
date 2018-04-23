@@ -31,9 +31,7 @@ function shellpromise (processToRun, options) {
 			if (code === 0) {
 				resolve(output);
 			} else {
-				if (options.verbose) {
-					console.warn(processToRun + ' exited with exit code ' + code);
-				}
+				console.warn(processToRun + ' exited with a non-zero (error) exit code ' + code);
 				reject(new Error(output));
 			}
 		});
